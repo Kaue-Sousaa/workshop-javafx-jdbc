@@ -22,7 +22,7 @@ public class MainViewController implements Initializable {
 	private MenuItem menuItemSeller;
 	
 	@FXML
-	private MenuItem menuItemDepartament;
+	private MenuItem menuItemDepartment;
 	
 	@FXML
 	private MenuItem menuItemAbout;
@@ -33,8 +33,8 @@ public class MainViewController implements Initializable {
 	}
 	
 	@FXML
-	public void onMenuItemDepartamentAction() {
-		
+	public void onMenuItemDepartmentAction() {
+		loadView("/gui/DepartmentList.fxml");
 	}
 	
 	@FXML
@@ -43,7 +43,7 @@ public class MainViewController implements Initializable {
 	}
 	
 	@Override
-	public void initialize(URL uri, ResourceBundle rb) {
+	public void initialize(URL url, ResourceBundle rb) {
 		
 	}
 	
