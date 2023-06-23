@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.mysql.cj.xdevapi.Statement;
+
 import db.DB;
 import db.DbException;
 import model.dao.SellerDao;
@@ -68,7 +70,8 @@ public class SellerDaoJDBC implements SellerDao {
 			st = conn.prepareStatement(
 					"UPDATE seller "
 					+ "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? "
-					+ "WHERE Id = ?");
+					+ "WHERE Id = ?",
+					java.sql.Statement.RETURN_GENERATED_KEYS);
 			
 			st.setString(1, obj.getName());
 			st.setString(2, obj.getEmail());
